@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from 'styled-components';
+import Header from './Header/Header';
 
 const Wrapper = styled.div`
     width: 80%;
@@ -7,9 +8,9 @@ const Wrapper = styled.div`
     background-color: red;
 `;
 
-
 const Home = () => (
     <Wrapper>
+        <Header />
         <div>
             <p>aaaaaaaaaa</p>
         </div>
