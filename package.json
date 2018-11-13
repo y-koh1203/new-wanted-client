@@ -5,8 +5,7 @@
   "main": "main.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack -p --progress --colors && webpack-dev-server --mode development --hot --color --port 3000 --open",
-    "serve": "webpack -p --progress --colors &&node ./",
+    "start": "webpack -p --progress --colors && node ./server/server.js",
     "build": "webpack -p --progress --colors",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\""
   },
