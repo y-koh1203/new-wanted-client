@@ -56,6 +56,12 @@ class Home extends React.Component<Props, State> {
     });
   }
 
+  closeMenu = () => {
+    this.setState({
+      isOpen: false
+    });
+  }
+
   render() {
     return (
       <Wrapper>
@@ -64,11 +70,10 @@ class Home extends React.Component<Props, State> {
           <Heading>UserNameさんのプロフィール</Heading>
           <Button title="Open" click={this.openMenu} />
         </ProfileContainer>
-
         <ActivityContainer>
           <Heading>UserNameさんのアクティビティ</Heading>
         </ActivityContainer>
-        {this.state.isOpen && <Menu />}
+        {this.state.isOpen && <Menu closeMenu={this.closeMenu}/>}
       </Wrapper>
     );
   }

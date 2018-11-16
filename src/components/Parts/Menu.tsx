@@ -16,7 +16,7 @@ const BackGroundLayer = styled.div`
   position: absolute;
   background-color: #000000;
   opacity: 0.5;
-  z-index: 1;
+  z-index: 10;
 `;
 
 const MenuBody = styled.div`
@@ -25,14 +25,18 @@ const MenuBody = styled.div`
   background-color: #ffffff;
   position: absolute;
   bottom: 0;
+  z-index: 20;
 `;
 
-interface Props {}
+interface Props {
+  closeMenu():void;
+}
 
 const Menu = (props:Props) => (
-  <BackGroundLayer>
+  <div>
+    <BackGroundLayer onClick={props.closeMenu} />
     <MenuBody />
-  </BackGroundLayer>
+  </div>
 );
 
 export default Menu;
