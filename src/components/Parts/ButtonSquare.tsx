@@ -3,9 +3,6 @@ import styled from 'styled-components';
 
 const UIButton = styled.button`
   background-color: lightcoral;
-  width: 30%;
-  padding: 2%;
-  border-radius: 10px;
 `;
 
 interface Props {
@@ -13,6 +10,6 @@ interface Props {
   click(): void;
 }
 
-const Button = (props: Props) => <UIButton onClick={props.click}>{props.title}</UIButton>;
+const ButtonSquare = (props: Props) => <UIButton onClick={props.click}>{props.title}</UIButton>;
 
-export default Button;
+export default ButtonSquare;
