@@ -18,7 +18,7 @@ const Titile = styled.h1`
   width: 80%;
   text-align: center;
   font-size: 1.2rem;
-  padding: 2% 0;
+  padding: 2.5% 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,20 +27,20 @@ const Titile = styled.h1`
 const ButtonGround = styled.div`
   width: 20%;
   text-align: center;
-  padding: 2% 0;
+  padding: 3% 0;
 `;
 
 const TitleText = styled.span`
   display: inline-block;
   vertical-align: middle;
-  margin-left: 24%;
+  margin-left: 22%;
 `;
 
 const click = () => {
   console.log('clicked!!');
 };
 
-const Header = () => (
+const Footer = () => (
   <Wrapper>
     <Flex>
       <Titile>
@@ -53,4 +53,4 @@ const Header = () => (
   </Wrapper>
 );
 
-export default Header;
+export default Footer;

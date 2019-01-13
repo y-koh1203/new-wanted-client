@@ -12,7 +12,7 @@
       "noUnusedLocals": true,
       "strict": true,
       "outDir": "./pubic/dist/",
-      "lib": ["es6", "es7", "dom"],
+      "lib": ["es2017", "es7", "dom"],
       "baseUrl": "src",
     },
     "include": [

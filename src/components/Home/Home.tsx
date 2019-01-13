@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Header from '../Header/Header';
 import Menu from '../Parts/Menu';
+import QuestionList from '../Question/QuestionList';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 //import Button from '../Parts/ButtonSquare';
 //import Button from '../Parts/Button';
@@ -89,34 +90,23 @@ const ActivityContainer = styled.div`
   }
 
   .tabItem {
-    width: 40%;
-    padding: 5% 0%;
+    width: 30%;
+    padding: 4% 0%;
     text-align: center;
   }
 
   .selected {
-    width: 40%;
-    padding: 5% 0%;
+    width: 30%;
+    padding: 4% 0%;
     text-align: center;
+    border-bottom: 2px solid lightblue;
+    animation: fade;
+    animation-duration: 2s;
   }
 
-  .selected::before{
-    bottom: 0;
-    margin-left: -13.5%;
-    position: absolute;
-    content: "";
-    width: 40%;
-    height: 2px;
-    background-color: #000000;
-    color: #000000;
-    z-index: 5;
-    animation-name: animation;
-    animation-duration: 0.5s;
-  }
-
-  @keyframes animation{
+  @keyframes fade{
     0%{
-      opacity: 0.1;
+      opactiy: 0.5;
     }
 
     100%{
@@ -148,6 +138,28 @@ const SmallHeading = styled.h3`
   text-align: center;
 `;
 
+const Quesitons = [
+  {
+    'question_id': '1',
+    'question_title': 'Sumple',
+    'question_body':'テストの質問です',
+    'tags':[
+      '算数','苦手','克服','引き算'
+    ]
+  },
+
+  {
+    'question_id': '1',
+    'question_title': 'Sumple',
+    'question_body': 'テストの質問です。',
+    'tags':[
+      '国語','漢字','書き順'
+    ]
+  },
+];
+
+const Quesitons2:any = [];
+
 interface Props {
   activities: Array<Object>;
 }
@@ -168,7 +180,6 @@ class Home extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    console.log('active');
     console.log(screen.width);
   }
 
@@ -222,10 +233,12 @@ class Home extends React.Component<Props, State> {
 
               <TabPanel className="tabPanel">
                 <SmallHeading>UserNameさんが答えた質問</SmallHeading>
+                <QuestionList question_list={Quesitons} />
               </TabPanel>
 
               <TabPanel className="tabPanel">
                 <SmallHeading>UserNameさんが聞いた質問</SmallHeading>
+                <QuestionList question_list={Quesitons2} />
               </TabPanel>
             </Tabs>
           </div>
