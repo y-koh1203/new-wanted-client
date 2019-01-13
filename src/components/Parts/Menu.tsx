@@ -9,9 +9,9 @@ const Wrapper = styled.div`
 
 const BackGroundLayer = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   top: 0;
-  position: absolute;
+  position: fixed;
   background-color: #000000;
   opacity: 0.5;
   z-index: 10;
@@ -22,7 +22,7 @@ const MenuBody = styled.div`
   width: 100%;
   padding: 0;
   background-color: #ffffff;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   z-index: 20;
   transition: 0.5s;
@@ -48,11 +48,11 @@ const FirstItem = styled.div`
   padding: 4% 0;
   font-size: 1.2em;
   text-align: center;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10 10 0 0;
 `;
 
 interface Props {
-  menuItem: Array<Object>;
+  menuItem: any;
   closeMenu(): void;
 }
 
@@ -61,11 +61,11 @@ const Menu = (props: Props) => (
     <BackGroundLayer onClick={props.closeMenu} />
     <MenuBody>
       <MenuList>
-        {props.menuItem.map((v, i) => {
+        {props.menuItem.map((v: any, i: any) => {
           return i === 0 ? (
-            <FirstItem>{Object.values(v)}</FirstItem>
+            <FirstItem>{v.title}</FirstItem>
           ) : (
-            <ListItem>{Object.values(v)}</ListItem>
+            <ListItem>{v.title}</ListItem>
           );
         })}
         <ListItem onClick={props.closeMenu}>閉じる</ListItem>

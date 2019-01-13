@@ -104,16 +104,6 @@ const ActivityContainer = styled.div`
     animation-duration: 2s;
   }
 
-  @keyframes fade{
-    0%{
-      opactiy: 0.5;
-    }
-
-    100%{
-      opacity: 1;
-    }
-  }
-
   .tabPanel {
     width: 100%;
     margin: 5% 0 2% 0;
@@ -156,6 +146,43 @@ const Quesitons = [
       '国語','漢字','書き順'
     ]
   },
+
+  {
+    'question_id': '1',
+    'question_title': 'Sumple',
+    'question_body': 'テストの質問です。',
+    'tags':[
+      '国語','漢字','書き順'
+    ]
+  },
+
+  {
+    'question_id': '1',
+    'question_title': 'Sumple',
+    'question_body': 'テストの質問です。',
+    'tags':[
+      '国語','漢字','書き順'
+    ]
+  },
+
+  {
+    'question_id': '1',
+    'question_title': 'Sumple',
+    'question_body': 'テストの質問です。',
+    'tags':[
+      '国語','漢字','書き順'
+    ]
+  },
+
+  {
+    'question_id': '1',
+    'question_title': 'Sumple',
+    'question_body': 'テストの質問です。',
+    'tags':[
+      '国語','漢字','書き順'
+    ]
+  },
+
 ];
 
 const Quesitons2:any = [];
@@ -168,7 +195,20 @@ interface State {
   tabIndex: number;
 }
 
-const menuItem: Array<Object> = [{ a: 'a' }, { b: 'b' }, { c: 'c' }];
+const menuItem: any = [
+  {
+     path: '/post' ,
+     title: '質問する'
+  }, 
+  {
+    path: '/questions' ,
+    title: '質問'
+  },
+  {
+    path: '/top' ,
+    title: 'TOP'
+  }
+];
 
 class Home extends React.Component<Props, State> {
   constructor(props: any) {
@@ -198,7 +238,7 @@ class Home extends React.Component<Props, State> {
   render() {
     return (
       <Wrapper>
-        <Header />
+        <Header handleClick={this.openMenu}/>
         <ProfileContainer>
           <MiddleHeading onClick={this.openMenu}>
             UserNameさんの{screen.width < 450 && <br />}プロフィール
@@ -225,10 +265,10 @@ class Home extends React.Component<Props, State> {
               selectedIndex={this.state.tabIndex}
             >
               <TabList className="tabList">
-                  <Tab className="tabItem"
-                       selectedClassName="selected">教えた</Tab>
-                  <Tab className="tabItem"
-                       selectedClassName="selected">聞いた</Tab>
+                <Tab className="tabItem"
+                      selectedClassName="selected">教えた</Tab>
+                <Tab className="tabItem"
+                      selectedClassName="selected">聞いた</Tab>
               </TabList>
 
               <TabPanel className="tabPanel">

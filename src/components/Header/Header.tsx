@@ -36,18 +36,18 @@ const TitleText = styled.span`
   margin-left: 24%;
 `;
 
-const click = () => {
-  console.log('clicked!!');
-};
+interface Props{
+  handleClick(): void;
+}
 
-const Header = () => (
+const Header = (props:Props) => (
   <Wrapper>
     <Flex>
       <Titile>
         <TitleText>Wanted!!</TitleText>
       </Titile>
       <ButtonGround>
-        <Button title="K" click={click} />
+        <Button title="K" click={props.handleClick} />
       </ButtonGround>
     </Flex>
   </Wrapper>
