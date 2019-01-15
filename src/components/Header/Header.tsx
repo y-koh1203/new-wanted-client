@@ -17,8 +17,9 @@ const Flex = styled.div`
 const Titile = styled.h1`
   width: 80%;
   text-align: center;
-  font-size: 1.2rem;
-  padding: 2% 0;
+  font-size: 1.4rem;
+  margin-top: 3% !important;
+  padding: 3% 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +28,7 @@ const Titile = styled.h1`
 const ButtonGround = styled.div`
   width: 20%;
   text-align: center;
-  padding: 2% 0;
+  padding: 3% 0;
 `;
 
 const TitleText = styled.span`
@@ -36,15 +37,23 @@ const TitleText = styled.span`
   margin-left: 24%;
 `;
 
-interface Props{
+// const Chip = styled.div`
+//   width: 20%;
+//   position: absolute;
+//   top: 5%;
+//   right: 80%;
+//   background-color: red;
+// `;
+interface Props {
   handleClick(): void;
+  title: string;
 }
 
-const Header = (props:Props) => (
+const Header = (props: Props) => (
   <Wrapper>
     <Flex>
       <Titile>
-        <TitleText>Wanted!!</TitleText>
+        <TitleText>{props.title}</TitleText>
       </Titile>
       <ButtonGround>
         <Button title="K" click={props.handleClick} />

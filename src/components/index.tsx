@@ -2,6 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './Home/Home';
+import PostQuestion from './Question/PostQuestion';
+import Questions from './Question/Questions';
 // import { Provider } from 'react-redux';
 // import { ConnectedRouter } from 'connected-react-router'
 
@@ -15,7 +17,11 @@ const Container = styled.div`
 
 const Router = () => (
   <BrowserRouter>
-    <Route exact path="/" component={Home} />
+    <div>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/post" component={PostQuestion} />
+      <Route exact path="/questions" component={Questions} />
+    </div>
   </BrowserRouter>
 );
 

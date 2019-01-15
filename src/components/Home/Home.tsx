@@ -4,8 +4,6 @@ import Header from '../Header/Header';
 import Menu from '../Parts/Menu';
 import QuestionList from '../Question/QuestionList';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-//import Button from '../Parts/ButtonSquare';
-//import Button from '../Parts/Button';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -76,14 +74,14 @@ const ActivityContainer = styled.div`
   width: 100%;
   margin-top: 3%;
 
-  .tabWrapper { 
+  .tabWrapper {
     width: 100%;
     margin: 3% auto;
     backgorund-color: #ffffff;
   }
 
   .tabList {
-    width:100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     position: relative;
@@ -130,62 +128,49 @@ const SmallHeading = styled.h3`
 
 const Quesitons = [
   {
-    'question_id': '1',
-    'question_title': 'Sumple',
-    'question_body':'テストの質問です',
-    'tags':[
-      '算数','苦手','克服','引き算'
-    ]
+    question_id: '1',
+    question_title: 'Sumple',
+    question_body: 'テストの質問です',
+    tags: ['算数', '苦手', '克服', '引き算']
   },
 
   {
-    'question_id': '1',
-    'question_title': 'Sumple',
-    'question_body': 'テストの質問です。',
-    'tags':[
-      '国語','漢字','書き順'
-    ]
+    question_id: '1',
+    question_title: 'Sumple',
+    question_body: 'テストの質問です。',
+    tags: ['国語', '漢字', '書き順']
   },
 
   {
-    'question_id': '1',
-    'question_title': 'Sumple',
-    'question_body': 'テストの質問です。',
-    'tags':[
-      '国語','漢字','書き順'
-    ]
+    question_id: '1',
+    question_title: 'Sumple',
+    question_body: 'テストの質問です。',
+    tags: ['国語', '漢字', '書き順']
   },
 
   {
-    'question_id': '1',
-    'question_title': 'Sumple',
-    'question_body': 'テストの質問です。',
-    'tags':[
-      '国語','漢字','書き順'
-    ]
+    question_id: '1',
+    question_title: 'Sumple',
+    question_body: 'テストの質問です。',
+    tags: ['国語', '漢字', '書き順']
   },
 
   {
-    'question_id': '1',
-    'question_title': 'Sumple',
-    'question_body': 'テストの質問です。',
-    'tags':[
-      '国語','漢字','書き順'
-    ]
+    question_id: '1',
+    question_title: 'Sumple',
+    question_body: 'テストの質問です。',
+    tags: ['国語', '漢字', '書き順']
   },
 
   {
-    'question_id': '1',
-    'question_title': 'Sumple',
-    'question_body': 'テストの質問です。',
-    'tags':[
-      '国語','漢字','書き順'
-    ]
-  },
-
+    question_id: '1',
+    question_title: 'Sumple',
+    question_body: 'テストの質問です。',
+    tags: ['国語', '漢字', '書き順']
+  }
 ];
 
-const Quesitons2:any = [];
+const Quesitons2: any = [];
 
 interface Props {
   activities: Array<Object>;
@@ -197,15 +182,15 @@ interface State {
 
 const menuItem: any = [
   {
-     path: '/post' ,
-     title: '質問する'
-  }, 
+    path: '/post',
+    title: '質問する'
+  },
   {
-    path: '/questions' ,
+    path: '/questions',
     title: '質問'
   },
   {
-    path: '/top' ,
+    path: '/top',
     title: 'TOP'
   }
 ];
@@ -238,7 +223,7 @@ class Home extends React.Component<Props, State> {
   render() {
     return (
       <Wrapper>
-        <Header handleClick={this.openMenu}/>
+        <Header handleClick={this.openMenu} title="Wanted!!" />
         <ProfileContainer>
           <MiddleHeading onClick={this.openMenu}>
             UserNameさんの{screen.width < 450 && <br />}プロフィール
@@ -261,14 +246,18 @@ class Home extends React.Component<Props, State> {
           <MiddleHeading>UserNameさんの{screen.width < 450 && <br />}アクティビティ</MiddleHeading>
           <div className="tabWrapper">
             <Tabs
-              onSelect={tabIndex => { this.setState({ tabIndex:tabIndex }) }}
+              onSelect={(tabIndex) => {
+                this.setState({ tabIndex: tabIndex });
+              }}
               selectedIndex={this.state.tabIndex}
             >
               <TabList className="tabList">
-                <Tab className="tabItem"
-                      selectedClassName="selected">教えた</Tab>
-                <Tab className="tabItem"
-                      selectedClassName="selected">聞いた</Tab>
+                <Tab className="tabItem" selectedClassName="selected">
+                  教えた
+                </Tab>
+                <Tab className="tabItem" selectedClassName="selected">
+                  聞いた
+                </Tab>
               </TabList>
 
               <TabPanel className="tabPanel">

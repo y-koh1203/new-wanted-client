@@ -13,17 +13,15 @@ class Tab extends React.Component<Props, State> {
     super(props);
     this.state = {
       selected: false
-    }
+    };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     console.log('mounted');
   }
 
-  render(){
-      return(
-        <div></div>
-      );
+  render() {
+    return <div />;
   }
 }
 

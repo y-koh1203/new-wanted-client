@@ -37,7 +37,7 @@ const MenuList = styled.div`
 
 const ListItem = styled.div`
   width: 100%;
-  padding: 4% 0;
+  padding: 5% 0;
   border-top: 1px solid #bbbbba;
   font-size: 1.2em;
   text-align: center;
@@ -45,10 +45,11 @@ const ListItem = styled.div`
 
 const FirstItem = styled.div`
   width: 100%;
-  padding: 4% 0;
+  padding: 5% 0;
   font-size: 1.2em;
   text-align: center;
-  border-radius: 10 10 0 0;
+  background-color: red;
+  border-radius: 10;
 `;
 
 interface Props {
@@ -62,11 +63,7 @@ const Menu = (props: Props) => (
     <MenuBody>
       <MenuList>
         {props.menuItem.map((v: any, i: any) => {
-          return i === 0 ? (
-            <FirstItem>{v.title}</FirstItem>
-          ) : (
-            <ListItem>{v.title}</ListItem>
-          );
+          return i === 0 ? <FirstItem>{v.title}</FirstItem> : <ListItem>{v.title}</ListItem>;
         })}
         <ListItem onClick={props.closeMenu}>閉じる</ListItem>
       </MenuList>
