@@ -1,0 +1,11 @@
+.animation-appear{
+    opacity: 0.9;  
+    background-color: yellow;
+    transition: opacity 500ms ease-in;
+}
+
+.animation-appear-active {
+    opacity: 0.9;  
+    background-color: yellow;
+    transition: opacity 500ms ease-in;
+}

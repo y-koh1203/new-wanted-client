@@ -18,7 +18,7 @@ const Titile = styled.h1`
   width: 80%;
   text-align: center;
   font-size: 1.4rem;
-  margin-top: 3% !important;
+  margin-top: 1%;
   padding: 3% 0;
   display: flex;
   justify-content: center;
@@ -48,6 +48,31 @@ interface Props {
   handleClick(): void;
   title: string;
 }
+
+// class Hoge extends React.Component<{}> {
+//   shouldComponentUpdate():boolean{
+//     return false;
+//   }
+//   hello():void{
+//     alert("Hello");
+//   }
+//   render():React.ReactNode{
+//     return <h1></h1>
+//   }
+// }
+
+// class Foo extends React.Component<{}> {
+//   ref = React.createRef<Hoge>();
+//   useChildMethod(){
+//     if(this.ref.current){
+//       this.ref.current.hello();
+//     }
+//   }
+//   hello(){}
+//   render(){
+//     return <Hoge ref={this.ref} helloMethod={this.hello}/>
+//   }
+// }
 
 const Header = (props: Props) => (
   <Wrapper>

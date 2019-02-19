@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Menu from '../Parts/Menu';
 import QuestionList from '../Question/QuestionList';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import './animation.css';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -222,58 +223,58 @@ class Home extends React.Component<Props, State> {
 
   render() {
     return (
-      <Wrapper>
-        <Header handleClick={this.openMenu} title="Wanted!!" />
-        <ProfileContainer>
-          <MiddleHeading onClick={this.openMenu}>
-            UserNameさんの{screen.width < 450 && <br />}プロフィール
-          </MiddleHeading>
-          <Flex>
-            <div className="avatarGround">
-              {/* <div className="avatar" style={{backgroundImage: `url(${props.imgObj.url})`}}></div> */}
-              <div
-                className="avatar"
-                style={{ backgroundImage: `url('/images/IVOL_STUDIO_010_TP_V4.jpg')` }}
-              />
-            </div>
-            <div className="userData">
-              <p className="userName">UserName</p>
-              <p className="nickName">NickName</p>
-            </div>
-          </Flex>
-        </ProfileContainer>
-        <ActivityContainer>
-          <MiddleHeading>UserNameさんの{screen.width < 450 && <br />}アクティビティ</MiddleHeading>
-          <div className="tabWrapper">
-            <Tabs
-              onSelect={(tabIndex) => {
-                this.setState({ tabIndex: tabIndex });
-              }}
-              selectedIndex={this.state.tabIndex}
-            >
-              <TabList className="tabList">
-                <Tab className="tabItem" selectedClassName="selected">
-                  教えた
-                </Tab>
-                <Tab className="tabItem" selectedClassName="selected">
-                  聞いた
-                </Tab>
-              </TabList>
+          <Wrapper>
+            <Header handleClick={this.openMenu} title="Wanted!!" />
+            <ProfileContainer>
+              <MiddleHeading onClick={this.openMenu}>
+                UserNameさんの{screen.width < 450 && <br />}プロフィール
+              </MiddleHeading>
+              <Flex>
+                <div className="avatarGround">
+                  {/* <div className="avatar" style={{backgroundImage: `url(${props.imgObj.url})`}}></div> */}
+                  <div
+                    className="avatar"
+                    style={{ backgroundImage: `url('/images/IVOL_STUDIO_010_TP_V4.jpg')` }}
+                  />
+                </div>
+                <div className="userData">
+                  <p className="userName">UserName</p>
+                  <p className="nickName">NickName</p>
+                </div>
+              </Flex>
+            </ProfileContainer>
+            <ActivityContainer>
+              <MiddleHeading>UserNameさんの{screen.width < 450 && <br />}アクティビティ</MiddleHeading>
+              <div className="tabWrapper">
+                <Tabs
+                  onSelect={(tabIndex) => {
+                    this.setState({ tabIndex: tabIndex });
+                  }}
+                  selectedIndex={this.state.tabIndex}
+                >
+                  <TabList className="tabList">
+                    <Tab className="tabItem" selectedClassName="selected">
+                      教えた
+                    </Tab>
+                    <Tab className="tabItem" selectedClassName="selected">
+                      聞いた
+                    </Tab>
+                  </TabList>
 
-              <TabPanel className="tabPanel">
-                <SmallHeading>UserNameさんが答えた質問</SmallHeading>
-                <QuestionList question_list={Quesitons} />
-              </TabPanel>
+                  <TabPanel className="tabPanel">
+                    <SmallHeading>UserNameさんが答えた質問</SmallHeading>
+                    <QuestionList question_list={Quesitons} />
+                  </TabPanel>
 
-              <TabPanel className="tabPanel">
-                <SmallHeading>UserNameさんが聞いた質問</SmallHeading>
-                <QuestionList question_list={Quesitons2} />
-              </TabPanel>
-            </Tabs>
-          </div>
-        </ActivityContainer>
-        {this.state.isOpen && <Menu menuItem={menuItem} closeMenu={this.closeMenu} />}
-      </Wrapper>
+                  <TabPanel className="tabPanel">
+                    <SmallHeading>UserNameさんが聞いた質問</SmallHeading>
+                    <QuestionList question_list={Quesitons2} />
+                  </TabPanel>
+                </Tabs>
+              </div>
+            </ActivityContainer>
+            {this.state.isOpen && <Menu menuItem={menuItem} closeMenu={this.closeMenu} />}
+          </Wrapper>
     );
   }
 }

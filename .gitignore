@@ -1,3 +1,5 @@
 /node_modules
 .vscode/
 /mock/
+firebase-config.js
+public/images/ダウンロード.png

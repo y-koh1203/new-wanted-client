@@ -1,23 +1,45 @@
 import * as React from 'react';
 import Home from './Home/Home';
-import { Route, Switch } from 'react-router';
 import PostQuestion from './Question/PostQuestion';
-import createBrowserHistory from 'history/createBrowserHistory';
-import { ConnectedRouter } from 'react-router-redux';
+import Questions from './Question/Questions';
+import Welcome from './Top/Welcome';
+import Register from './Register/Register';;
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { 
+  CSSTransition, 
+  TransitionGroup 
+} from 'react-transition-group';
 
-// interface Props extends RouteComponentProps<any>{}
+interface Props {
+  location:any
+}
 
-const history = createBrowserHistory();
+//import createBrowserHistory from 'history/createBrowserHistory';
+//const history = createBrowserHistory();
 
-const Router = () => (
-  <ConnectedRouter history={history}>
-    <div>
-      <Switch>
-        <Route exact path={'/'} component={Home} />
-        <Route exact path={'/post'} component={PostQuestion} />
-      </Switch>
-    </div>
-  </ConnectedRouter>
-);
+const Router = ({location}:Props) => {
+  const current =  location.pathname.split('/')[1] || '';
+  // const timeout = { enter: 200, exit: 300 }
+  
+  return(
+    <TransitionGroup>
+      <CSSTransition
+        in={true}
+        timeout={100}
+        classNames="fade"
+        key={current}
+        appear={true}
+      >
+        <Switch location={location}>
+          <Route exact path="/" component={Welcome} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/post" component={PostQuestion} />
+          <Route exact path="/questions" component={Questions} />
+        </Switch>
+      </CSSTransition>
+    </TransitionGroup>
+  );
+};
 
-export default Router;
+export default withRouter(Router);

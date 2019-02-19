@@ -28,7 +28,8 @@ module.exports = {
           use: [
             {loader: 'ts-loader'}
           ]
-        }
+        },
+        {test: /\.css$/, use: ['css-loader']}
       ]
-    },
+    }
   }

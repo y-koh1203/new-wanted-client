@@ -1,11 +1,9 @@
-
 import * as React from 'react';
 import styled from 'styled-components';
 import Header from '../Header/Header';
 import QuestionList from './QuestionList';
 // import { CSSTransition } from 'react-transition-group';
 // import { TextArea, Input, Button } from 'semantic-ui-react';
-
 
 interface Props {}
 
@@ -28,48 +26,48 @@ const MiddleHeading = styled.h2`
 `;
 
 const Quesitons = [
-    {
-      question_id: '1',
-      question_title: 'Sumple',
-      question_body: 'テストの質問です',
-      tags: ['算数', '苦手', '克服', '引き算']
-    },
-  
-    {
-      question_id: '1',
-      question_title: 'Sumple',
-      question_body: 'テストの質問です。',
-      tags: ['国語', '漢字', '書き順']
-    },
-  
-    {
-      question_id: '1',
-      question_title: 'Sumple',
-      question_body: 'テストの質問です。',
-      tags: ['国語', '漢字', '書き順']
-    },
-  
-    {
-      question_id: '1',
-      question_title: 'Sumple',
-      question_body: 'テストの質問です。',
-      tags: ['国語', '漢字', '書き順']
-    },
-  
-    {
-      question_id: '1',
-      question_title: 'Sumple',
-      question_body: 'テストの質問です。',
-      tags: ['国語', '漢字', '書き順']
-    },
-  
-    {
-      question_id: '1',
-      question_title: 'Sumple',
-      question_body: 'テストの質問です。',
-      tags: ['国語', '漢字', '書き順']
-    }
-  ];
+  {
+    question_id: '1',
+    question_title: 'Sumple',
+    question_body: 'テストの質問です',
+    tags: ['算数', '苦手', '克服', '引き算']
+  },
+
+  {
+    question_id: '1',
+    question_title: 'Sumple',
+    question_body: 'テストの質問です。',
+    tags: ['国語', '漢字', '書き順']
+  },
+
+  {
+    question_id: '1',
+    question_title: 'Sumple',
+    question_body: 'テストの質問です。',
+    tags: ['国語', '漢字', '書き順']
+  },
+
+  {
+    question_id: '1',
+    question_title: 'Sumple',
+    question_body: 'テストの質問です。',
+    tags: ['国語', '漢字', '書き順']
+  },
+
+  {
+    question_id: '1',
+    question_title: 'Sumple',
+    question_body: 'テストの質問です。',
+    tags: ['国語', '漢字', '書き順']
+  },
+
+  {
+    question_id: '1',
+    question_title: 'Sumple',
+    question_body: 'テストの質問です。',
+    tags: ['国語', '漢字', '書き順']
+  }
+];
 
 class Questions extends React.Component<Props, State> {
   constructor(props: any) {
@@ -103,7 +101,7 @@ class Questions extends React.Component<Props, State> {
         <MiddleHeading>あ</MiddleHeading>
 
         <div>
-            <QuestionList question_list={Quesitons}/>
+          <QuestionList question_list={Quesitons} />
         </div>
       </Wrapper>
     );
